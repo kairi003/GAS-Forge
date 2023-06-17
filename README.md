@@ -1,3 +1,7 @@
+# GAS-Forge
+
+A fork of [Forge](https://github.com/digitalbazaar/forge) for **Google Apps Script**.
+
 # Forge
 
 [![npm package](https://nodei.co/npm/node-forge.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-forge/)
