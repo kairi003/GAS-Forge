@@ -79,7 +79,12 @@ outputs.forEach(info => {
       new webpack.DefinePlugin({
         window: 'globalThis'
       })
-    ]
+    ],
+    resolve: {
+      alias: {
+        url: 'url-search-params-polyfill'
+      }
+    }
   };
 
   // plain unoptimized unminified bundle
