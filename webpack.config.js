@@ -6,6 +6,7 @@
  * Copyright 2011-2016 Digital Bazaar, Inc.
  */
 const path = require('path');
+const webpack = require('webpack');
 
 // build multiple outputs
 module.exports = [];
@@ -73,6 +74,16 @@ outputs.forEach(info => {
       process: false,
       crypto: false,
       setImmediate: false
+    },
+    plugins: [
+      new webpack.DefinePlugin({
+        window: 'globalThis'
+      })
+    ],
+    resolve: {
+      alias: {
+        url: 'url-search-params-polyfill'
+      }
     }
   };
 
@@ -83,7 +94,8 @@ outputs.forEach(info => {
       path: path.join(__dirname, 'dist'),
       filename: info.filenameBase + '.js',
       library: info.library || '[name]',
-      libraryTarget: info.libraryTarget || 'umd'
+      libraryTarget: info.libraryTarget || 'var',
+      globalObject: 'globalThis'
     }
   });
   if(info.library === null) {
@@ -100,10 +112,14 @@ outputs.forEach(info => {
       path: path.join(__dirname, 'dist'),
       filename: info.filenameBase + '.min.js',
       library: info.library || '[name]',
-      libraryTarget: info.libraryTarget || 'umd'
+      libraryTarget: info.libraryTarget || 'var',
+      globalObject: 'globalThis'
     },
     devtool: 'cheap-module-source-map',
     plugins: [
+      new webpack.DefinePlugin({
+        window: 'globalThis'
+      }),
       /*
       new webpack.optimize.UglifyJsPlugin({
         sourceMap: true,
