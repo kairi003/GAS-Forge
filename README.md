@@ -2,6 +2,10 @@
 
 A fork of [Forge](https://github.com/digitalbazaar/forge) for **Google Apps Script**.
 
+Script ID: `10TSoqwmCR4iAaZlxn_b6_x5yPFgukdOa8Q-4OsnEc9vuhf4l1w1v71nJ`
+
+Share: https://script.google.com/home/projects/10TSoqwmCR4iAaZlxn_b6_x5yPFgukdOa8Q-4OsnEc9vuhf4l1w1v71nJ
+
 # Forge
 
 [![npm package](https://nodei.co/npm/node-forge.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-forge/)
